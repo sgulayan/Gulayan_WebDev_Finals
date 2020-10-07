@@ -1,71 +1,102 @@
-// There are fewer ways to pick a DOM node with legacy browsers
-const form  = document.getElementsByTagName('form')[0];
-const email = document.getElementById('mail');
+// Run function when DOM Content has loaded
+document.addEventListener('DOMContentLoaded', init);
 
-// The following is a trick to reach the next sibling Element node in the DOM
-// This is dangerous because you can easily build an infinite loop.
-// In modern browsers, you should prefer using element.nextElementSibling
-let error = email;
-while ((error = error.nextSibling).nodeType != 1);
+// Function to run when DOM Content has loaded
+function init(event) {
 
-// As per the HTML5 Specification
-const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+	// Get registration form and keep in global scope
+	regForm = document.forms['registration'];
 
-// Many legacy browsers do not support the addEventListener method.
-// Here is a simple way to handle this; it's far from the only one.
-function addEvent(element, event, callback) {
-  let previousEventCallBack = element["on"+event];
-  element["on"+event] = function (e) {
-    const output = callback(e);
+	// Listen for form submit
+	regForm['register'].onclick = validateForm; 
+}
 
-    // A callback that returns `false` stops the callback chain
-    // and interrupts the execution of the event callback.
-    if (output === false) return false;
+// Function to validate form elements
+function validateForm(event) {
 
-    if (typeof previousEventCallBack === 'function') {
-      output = previousEventCallBack(e);
-      if(output === false) return false;
-    }
+	// Array to contain all error messages
+	var errorMessages = Array();
+
+	// If username is empty
+	if(!regForm['username'].value) {
+		errorMessages.push('* Please enter Username');
+	}
+
+	// If password1 is empty
+	if(!regForm['password1'].value) {
+		errorMessages.push('* Please enter Password1');
+	}
+
+	// If password2 is empty
+	if(!regForm['password2'].value) {
+		errorMessages.push('* Please enter Password2');
+	}
+
+	// If both passwords have values
+	if(regForm['password1'].value && regForm['password2'].value) {
+		// If passwords don't match
+		if(regForm['password1'].value != regForm['password2'].value) {
+			errorMessages.push('* Passwords do not match');
+		}
+	}
+
+	// Find out if a gender has been selected
+	var isChecked = false;
+	for(var i=0; i < regForm['gender'].length; i++) {
+		if(regForm['gender'][i].checked) {
+			isChecked = true; // Found a checked radio button!
+			break; // No need to continue the search
+		}
+	}
+
+	// If a gender selection was not found
+	if(!isChecked) {
+		errorMessages.push('* Please choose your gender');
+	}
+  
+  // If selection has no value
+  if(!regForm['continent'].value) {
+      errorMessages.push('* Please select your location');
   }
-};
 
-// Now we can rebuild our validation constraint
-// Because we do not rely on CSS pseudo-class, we have to 
-// explicitly set the valid/invalid class on our email field
-addEvent(window, "load", function () {
-  // Here, we test if the field is empty (remember, the field is not required)
-  // If it is not, we check if its content is a well-formed e-mail address.
-  const test = email.value.length === 0 || emailRegExp.test(email.value);
+	// If description is empty
+	if(!regForm['description'].value) {
+		errorMessages.push('* Please enter a description about you');
+	}
 
-  email.className = test ? "valid" : "invalid";
-});
+  // Show error messages
+	displayErrors(errorMessages);
+  
+	// If there are errors
+	if(errorMessages.length) {
+		// Stop the form from submitting
+		return false;
+	}
+  
+  
+}
 
-// This defines what happens when the user types in the field
-addEvent(email, "input", function () {
-  const test = email.value.length === 0 || emailRegExp.test(email.value);
-  if (test) {
-    email.className = "valid";
-    error.innerHTML = "";
-    error.className = "error";
-  } else {
-    email.className = "invalid";
-  }
-});
-
-// This defines what happens when the user tries to submit the data
-addEvent(form, "submit", function () {
-  const test = email.value.length === 0 || emailRegExp.test(email.value);
-
-  if (!test) {
-    email.className = "invalid";
-    error.innerHTML = "I expect an e-mail, darling!";
-    error.className = "error active";
-
-    // Some legacy browsers do not support the event.preventDefault() method
+function displayErrors(errors) {
+	var errorBox = document.getElementById('errorMessages');
+  
+  // If there aren't any errors
+	if(!errors.length) {
+		errorBox.innerHTML = '';
     return false;
-  } else {
-    email.className = "valid";
-    error.innerHTML = "";
-    error.className = "error";
-  }
-});
+	}
+
+	// Get reference to error box
+	var errorBox = document.getElementById('errorMessages');
+
+	// Prepare a container to hold the completed error message string
+	var messageString = '<ul>';
+
+	// Loop through each error to display
+	for(var i=0; i<errors.length; i++) {
+		messageString += '<li>' + errors[i] + '</li>';
+	}
+
+	messageString += '</ul>';
+
+	errorBox.innerHTML = messageString;
+}
