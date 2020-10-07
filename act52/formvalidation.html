@@ -1,47 +1,48 @@
 <legend><strong>STUDENT REGISTRATION FORM FOR SCHOOL'S LIBRARY</strong></legend>
   <h1>REGISTRATION FORM</h1>
   
-  <label for="ID"><strong>Student's ID Number:</strong></label><br>
-  <input type="text" id="id" name="id" placeholder="Enter ID here"><br>
+  <label for="ID"><strong>Student's ID Number:</strong><abbr title="This field is mandatory" aria-label="required"></abbr></label><br>
+  <input type="number" id="id" max="12" min="12" name="id" placeholder="Enter ID here"><br>
   <span class="error" aria-live="polite"></span>
+  <
   <br>  
 
-  <label for="Name"><strong>Student's Name:</strong></label><br>
+  <label for="Name"><strong>Student's Name:</strong><abbr title="This field is mandatory" aria-label="required"></abbr></label><br>
   <input type="text" id="firstname" name="firstname" placeholder="Firstname"><br>
   <input type="text" id="lastname" name="lastname" placeholder="Lastname"><br>
   <br>
                 
-  <label for="Email"><strong>Email Address:</strong></label><br>
+  <label for="Email"><strong>Email Address:</strong><abbr title="This field is mandatory" aria-label="required"></abbr></label><br>
   <input type="text" id="email" name="email" placeholder="Enter Email">
   <br>
   <br>
   
-  <label for="password"><strong>Password:</strong></label>
+  <label for="password"><strong>Password:</strong><abbr title="This field is mandatory" aria-label="required"></abbr></label>
   <br>
   <input type="password" id="pass" name="pass" placeholder="************"><br><br>
   <br>
 
-  <legend><strong>Student's Gender:</strong></legend>
+  <legend><strong>Student's Gender:</strong><abbr title="This field is mandatory" aria-label="required"></abbr></legend>
   <input type="radio" id="male" name="gender" value="male">
   <label for="male">Male</label><br>
   <input type="radio" id="female" name="gender" value="female">
   <label for="female">Female</label><br>
   <br>
 
-  <legend><strong>Student's Year Level:</strong></legend> 
-  <input type="radio" id="radio" name="Level" value="true">
+  <legend><strong>Student's Year Level:</strong><abbr title="This field is mandatory" aria-label="required"></abbr></legend> 
+  <input type="radio" id="f1" name="Level" value="true">
   <label for="box1"> First Year</label><br>
-  <input type="radio" id="radio" name="Level" value="true">
+  <input type="radio" id="f2" name="Level" value="true">
   <label for="box2"> Second Year</label><br>
-  <input type="radio" id="radio" name="Level" value="true">
+  <input type="radio" id="f3" name="Level" value="true">
   <label for="box3"> Third Year</label><br>
-  <input type="radio" id="radio" name="Level" value="true">
+  <input type="radio" id="f4" name="Level" value="true">
   <label for="box4"> Forth Year</label><br>
-  <input type="radio" id="radio" name="Level" value="true">
+  <input type="radio" id="f5" name="Level" value="true">
   <label for="box5"> Fifth Year</label><br>
   <br>
   
-  <label for="Course"><strong>Student's Course:</strong></label>
+  <label for="Course"><strong>Student's Course:</strong><abbr title="This field is mandatory" aria-label="required"></abbr></label>
   <select name="Course" id="Course">  
   <option value="SELECT">CHOOSE OPTION</option>
   <option value="CAH">CAH</option>
@@ -58,7 +59,7 @@
   <br>
   <br>
 
-  <legend><strong>Select Category:</strong></legend> 
+  <legend><strong>Select Category:</strong><abbr title="This field is mandatory" aria-label="required"></abbr></legend> 
   <input type="radio" id="cat1" name="cat" value="cat1">
   <label for="male">Category 1 (Minimal Internet Connection + Printed Materials)</label><br>
   <input type="radio" id="cat2" name="cat" value="cat2">
@@ -69,9 +70,9 @@
   <label for="other">Category 3 (Full internet connection)</label><br>
   <br>
 
-  <input type="checkbox" id="checkbox" name="check" value="false">
-  <label for="box"> I agree to the Terms and Conditions of this site. </label><br>
-  <input type="checkbox" id="checkbox" name="check" value="false">
+  <input type="checkbox" id="req" name="check" value="false">
+  <label for="box"> I agree to the Terms and Conditions of this site.<abbr title="This field is mandatory" aria-label="required"></abbr></label><br>
+  <input type="checkbox" id="notreq" name="check" value="false">
   <label for="box0"> I want to receive news, announcements, and resources from the School's Archieve. </label><br>
   <br>
 
