@@ -1,1 +1,82 @@
+<legend><strong>STUDENT REGISTRATION FORM FOR SCHOOL'S LIBRARY</strong></legend>
+  <h1>REGISTRATION FORM</h1>
+  
+  <label for="ID"><strong>Student's ID Number:</strong></label><br>
+  <input type="text" id="id" name="id" placeholder="Enter ID here"><br>
+  <span class="error" aria-live="polite"></span>
+  <br>  
 
+  <label for="Name"><strong>Student's Name:</strong></label><br>
+  <input type="text" id="firstname" name="firstname" placeholder="Firstname"><br>
+  <input type="text" id="lastname" name="lastname" placeholder="Lastname"><br>
+  <br>
+                
+  <label for="Email"><strong>Email Address:</strong></label><br>
+  <input type="text" id="email" name="email" placeholder="Enter Email">
+  <br>
+  <br>
+  
+  <label for="password"><strong>Password:</strong></label>
+  <br>
+  <input type="password" id="pass" name="pass" placeholder="************"><br><br>
+  <br>
+
+  <legend><strong>Student's Gender:</strong></legend>
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Male</label><br>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label><br>
+  <br>
+
+  <legend><strong>Student's Year Level:</strong></legend> 
+  <input type="radio" id="radio" name="Level" value="true">
+  <label for="box1"> First Year</label><br>
+  <input type="radio" id="radio" name="Level" value="true">
+  <label for="box2"> Second Year</label><br>
+  <input type="radio" id="radio" name="Level" value="true">
+  <label for="box3"> Third Year</label><br>
+  <input type="radio" id="radio" name="Level" value="true">
+  <label for="box4"> Forth Year</label><br>
+  <input type="radio" id="radio" name="Level" value="true">
+  <label for="box5"> Fifth Year</label><br>
+  <br>
+  
+  <label for="Course"><strong>Student's Course:</strong></label>
+  <select name="Course" id="Course">  
+  <option value="SELECT">CHOOSE OPTION</option>
+  <option value="CAH">CAH</option>
+  <option value="CABE">CABE</option>
+  <option value="CEA">CEA</option>  
+  <option value="CTE">CTE</option>  
+  <option value="CN">CN</option> 
+  <option value="CPC">CPC</option>  
+  <option value="CMBS">CMBS</option>  
+  <option value="CCS">CCS</option>  
+  <option value="CHEFS">CHEFS</option>  
+  <option value="CM">CM</option>  
+  </select>
+  <br>
+  <br>
+
+  <legend><strong>Select Category:</strong></legend> 
+  <input type="radio" id="cat1" name="cat" value="cat1">
+  <label for="male">Category 1 (Minimal Internet Connection + Printed Materials)</label><br>
+  <input type="radio" id="cat2" name="cat" value="cat2">
+  <label for="female">Category 2 without Courier (Semi-internet connection + Digital Materials)</label><br>
+  <input type="radio" id="cat2plus" name="cat" value="cat2plus">
+  <label for="other">Category 2 with Courier (Semi-internet connection + Printer Materials)</label><br>
+  <input type="radio" id="cat3" name="cat" value="cat3">
+  <label for="other">Category 3 (Full internet connection)</label><br>
+  <br>
+
+  <input type="checkbox" id="checkbox" name="check" value="false">
+  <label for="box"> I agree to the Terms and Conditions of this site. </label><br>
+  <input type="checkbox" id="checkbox" name="check" value="false">
+  <label for="box0"> I want to receive news, announcements, and resources from the School's Archieve. </label><br>
+  <br>
+
+  <input type="reset" Onclick="alert('Do you really want to reset?')">
+  <button type="submit">Submit</button>
+  <br>
+
+  </form>
