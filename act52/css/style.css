@@ -68,22 +68,4 @@ button {
 	font-weight: 400;
 }
 
-#errorMessages {
-	width: 480px;
-	margin: 2em auto;
-	background-color: #ecf0f1;
-	overflow: hidden;
-}
 
-#errorMessages li {
-	padding: 1em;
-	background-color: #e74c3c;
-	color: #ecf0f1;
-	font-weight: 400;
-	margin: 0 1em;
-	margin-bottom: 1em;
-}
-
-#errorMessages li:first-child {
-	margin-top: 1em;
-}
