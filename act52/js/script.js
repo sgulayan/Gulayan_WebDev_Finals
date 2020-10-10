@@ -15,8 +15,7 @@ window.onload = function() {
 
 function validateForm() {
   var fname = document.forms["myForm"]["fname"].value;
-  var lname = document.forms["myForm"]["lname"].value;
-  var pwd = document.forms["myForm"]["pwd"].value;
+  var password = document.forms["myForm"]["pwd"].value;
   var email = document.forms["myForm"]["email"].value;
   var homepage = document.forms["myForm"]["homepage"].value;
   var topix = document.forms["myForm"]["subject"].value;
@@ -25,11 +24,7 @@ function validateForm() {
     alert("First name seems to be empty, please fill it up!");
     return false;
   }
-  else if (lname == ""){
-  	alert("Last name seems to be empty, please fill it up!");
-    return false;
-  }
-  else if (pwd == ""){
+  else if (password == ""){
   	alert("Password seems to be empty, please fill it up!");
     return false;
   }
