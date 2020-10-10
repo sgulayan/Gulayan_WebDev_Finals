@@ -48,6 +48,10 @@ var id = document.forms["myForm"]["fname"].value;
   	alert("Please select your category!");
     return false;
   }
+	else if (req == ""){
+  	alert("Agree with terms and condition.");
+    return false;
+  }
   else{
   	welcome();
   }
