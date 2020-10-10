@@ -14,8 +14,7 @@
 	  <br>  
   <br>  
   <label for="Email"><strong>Email Address:</strong></label>
-  <input type="text" id="email" name="email" placeholder="Enter Email">
-  <span class="error" aria-live="polite"></span>
+  <input type="text" id="email" name="email" placeholder="Enter Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
 	  <br>  
 	  <br>  
   <label for="password"><strong>Password:</strong></label>
@@ -30,15 +29,15 @@
   <br>  
 	  <br>  
   <legend><strong>Student's Year Level:</strong></legend> 
-  <input type="radio" id="f1" name="Level" value="true">
+  <input type="radio" id="f1" name="Level" value="f1">
   <label for="box1"> First Year</label>  <br>  
-  <input type="radio" id="f2" name="Level" value="true">
+  <input type="radio" id="f2" name="Level" value="f2">
   <label for="box2"> Second Year</label>  <br>  
-  <input type="radio" id="f3" name="Level" value="true">
+  <input type="radio" id="f3" name="Level" value="f3">
   <label for="box3"> Third Year</label>  <br>  
-  <input type="radio" id="f4" name="Level" value="true">
+  <input type="radio" id="f4" name="Level" value="f3">
   <label for="box4"> Forth Year</label>  <br>  
-  <input type="radio" id="f5" name="Level" value="true">
+  <input type="radio" id="f5" name="Level" value="f5">
   <label for="box5"> Fifth Year</label>  <br>  
     <br>  
 	  <br>  
@@ -77,7 +76,7 @@
   <label for="box0"> I want to receive news, announcements, and resources from the School's Archieve. </label><br>
   <br>
   <br>  
-  <button type="submit" value="register">Submit</button>
+  <button type="submit" value="Register">Submit</button>
  <button id="btnLogin" onClick="window.location.reload();">Reset</button>	
   <br>
 
