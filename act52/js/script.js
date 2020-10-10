@@ -44,7 +44,11 @@ var id = document.forms["myForm"]["fname"].value;
   	alert("Please select your year level!");
     return false;
   }
-	else if(!document.getElementById('cat1').checked & !document.getElementById('cat2').checked & !document.getElementById('cat2plus').checked& !document.getElementById('cat3').checked) {
+	else if(!document.getElementById('op1').checked & !document.getElementById('op2').checked & !document.getElementById('op3').checked & !document.getElementById('op4').checked & !document.getElementById('op5').checked & !document.getElementById('op6').checked & !document.getElementById('op7').checked & !document.getElementById('op8').checked & !document.getElementById('op9').checked & !document.getElementById('op10').checked) {
+  	alert("Please select your course!");
+    return false;
+  }
+	else if(!document.getElementById('cat1').checked & !document.getElementById('cat2').checked & !document.getElementById('cat2plus').checked & !document.getElementById('cat3').checked) {
   	alert("Please select your category!");
     return false;
   }
