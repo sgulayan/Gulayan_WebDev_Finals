@@ -1,9 +1,9 @@
 
 function validateForm() {
-var id = document.forms["myForm"]["fname"].value;
+var id = document.forms["myForm"]["id"].value;
   var fname = document.forms["myForm"]["fname"].value;
 	  var email = document.forms["myForm"]["email"].value;
-  var password = document.forms["myForm"]["pwd"].value;
+  var password = document.forms["myForm"]["password"].value;
 
   if (id == "") {
     alert("ID name seems to be empty, please fill it up!");
