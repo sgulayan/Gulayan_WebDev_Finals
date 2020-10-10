@@ -14,14 +14,18 @@ window.onload = function() {
 }
 
 function validateForm() {
+var id = document.forms["myForm"]["fname"].value;
   var fname = document.forms["myForm"]["fname"].value;
+	  var email = document.forms["myForm"]["email"].value;
   var password = document.forms["myForm"]["pwd"].value;
-  var email = document.forms["myForm"]["email"].value;
-  var homepage = document.forms["myForm"]["homepage"].value;
   var topix = document.forms["myForm"]["subject"].value;
 
-  if (fname == "") {
-    alert("First name seems to be empty, please fill it up!");
+  if (id == "") {
+    alert("ID name seems to be empty, please fill it up!");
+    return false;
+  }
+	 else if (fname == ""){
+  	alert("Name seems to be empty, please fill it up!");
     return false;
   }
   else if (password == ""){
@@ -32,16 +36,16 @@ function validateForm() {
   	alert("Email seems to be empty, please fill it up!");
     return false;
   }
-  else if (homepage == ""){
-  	alert("Email seems to be empty, please fill it up!");
-    return false;
-  }
-  else if(!document.getElementById('male').checked & !document.getElementById('female').checked & !document.getElementById('other').checked ) {
+  else if(!document.getElementById('male').checked & !document.getElementById('female').checked) {
   	alert("Please select your gender!");
     return false;
   }
-  else if(topix == "") {
-  	alert("Please choose a preference in topic!");
+	else if(!document.getElementById('f1').checked & !document.getElementById('f2').checked & !document.getElementById('f3').checked& !document.getElementById('f4').checked & !document.getElementById('f5').checked) {
+  	alert("Please select your year level!");
+    return false;
+  }
+	else if(!document.getElementById('cat1').checked & !document.getElementById('cat2').checked & !document.getElementById('cat2plus').checked& !document.getElementById('cat3').checked) {
+  	alert("Please select your category!");
     return false;
   }
   else{
@@ -54,5 +58,5 @@ function checkFormat(){
 }
 
 function welcome(){
-	alert("Welcome, " + document.getElementById('fname').value + "! Hope you enjoy the experience!");
+	alert("Welcome to UIC's online libary, " + document.getElementById('fname').value );
 }
