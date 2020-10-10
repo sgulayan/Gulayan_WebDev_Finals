@@ -1,24 +1,9 @@
-var subjectObject = {
-  "Front-end": {
-
-  },
-  "Back-end": {
-
-  }
-}
-window.onload = function() {
-  var subjectSel = document.getElementById("subject");
-  for (var x in subjectObject) {
-    subjectSel.options[subjectSel.options.length] = new Option(x, x);
-  }
-}
 
 function validateForm() {
 var id = document.forms["myForm"]["fname"].value;
   var fname = document.forms["myForm"]["fname"].value;
 	  var email = document.forms["myForm"]["email"].value;
   var password = document.forms["myForm"]["pwd"].value;
-  var topix = document.forms["myForm"]["subject"].value;
 
   if (id == "") {
     alert("ID name seems to be empty, please fill it up!");
