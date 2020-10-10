@@ -28,12 +28,12 @@ var id = document.forms["myForm"]["fname"].value;
   	alert("Name seems to be empty, please fill it up!");
     return false;
   }
-  else if (password == ""){
-  	alert("Password seems to be empty, please fill it up!");
-    return false;
-  }
   else if (email == ""){
   	alert("Email seems to be empty, please fill it up!");
+    return false;
+  }
+	 else if (password == ""){
+  	alert("Password seems to be empty, please fill it up!");
     return false;
   }
   else if(!document.getElementById('male').checked & !document.getElementById('female').checked) {
@@ -48,7 +48,7 @@ var id = document.forms["myForm"]["fname"].value;
   	alert("Please select your category!");
     return false;
   }
-	else if (req == ""){
+	else if (!document.getElementById('req').checked){
   	alert("Agree with terms and condition.");
     return false;
   }
