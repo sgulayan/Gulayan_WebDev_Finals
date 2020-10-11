@@ -151,3 +151,11 @@ body {
   color: #999999;
   text-decoration: none;
 }
+
+.footer {
+      padding: 3px;
+      font-size: 8px;
+      text-align: center;
+      background: #ddd;
+    }
+
