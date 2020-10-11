@@ -1,4 +1,4 @@
-*,
+​*,
 *::after,
 *::before {
   box-sizing: inherit;
@@ -20,7 +20,7 @@ body {
 }
 
 .column {
-  width: 25%;
+  width: 50%;
   float: left;
   padding: 0 25px;
 }
@@ -151,6 +151,7 @@ body {
   color: #999999;
   text-decoration: none;
 }
+
 
  .footer {
       padding: 3px;
